@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HTML & CSS Skills — Deep Understanding Chart</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap">
+  <style>
+    :root{
+      --bg:#0f172a; --card:#0b1220; --muted:#94a3b8; --accent:#16a34a;
+      --glass: rgba(255,255,255,0.03);
+    }
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:linear-gradient(180deg,#071024 0%, #0b1220 100%);color:#e6eef6}
+    .container{max-width:1100px;margin:28px auto;padding:24px}
+    header{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:0;color:var(--muted)}
+
+    .card{background:var(--card);border-radius:12px;padding:18px;margin-bottom:18px;box-shadow:0 6px 24px rgba(2,6,23,0.6)}
+
+    /* Table */
+    .skills-table{width:100%;border-collapse:collapse;font-size:13px}
+    .skills-table thead th{position:sticky;top:0;background:linear-gradient(90deg,var(--accent),#0ea5a4);color:#fff;padding:10px 12px;text-align:left;font-weight:600}
+    .skills-table tbody td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.04);vertical-align:top}
+    .level{display:inline-block;padding:4px 8px;border-radius:999px;font-size:12px}
+    .level.beginner{background:rgba(34,197,94,0.12);color:#b7f5c9}
+    .level.intermediate{background:rgba(59,130,246,0.09);color:#bcdcff}
+    .level.advanced{background:rgba(236,72,153,0.08);color:#ffd6ea}
+
+    /* Responsive table container */
+    .table-wrap{overflow:auto;border-radius:8px}
+
+    /* Chart area */
+    .chart-row{display:grid;grid-template-columns:1fr 420px;gap:18px;align-items:start}
+    @media (max-width:920px){.chart-row{grid-template-columns:1fr}}
+
+    .chart-card{padding:12px}
+
+    /* Download button */
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:#052018;text-decoration:none;font-weight:600;margin-right:8px}
+
+    footer{margin-top:12px;color:var(--muted);font-size:13px}
+
+    /* small readable table on mobile */
+    @media (max-width:640px){
+      .skills-table thead{display:none}
+      .skills-table tbody td{display:block;padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)}
+      .skills-table tbody tr{margin-bottom:8px;border-radius:8px;background:var(--glass);padding:8px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>HTML &amp; CSS Frontend — Deep Skills Chart</h1>
+        <p class="lead">Structured skill table + importance chart. Save this file as <code>HTML_CSS_Skills_Deep_Chart.html</code> and open in your browser.</p>
+      </div>
+    </header>
+
+    <div class="card">
+      <div class="chart-row">
+        <div>
+          <h3 style="margin-top:0">Skills Table</h3>
+          <div class="table-wrap">
+            <table class="skills-table" id="skillsTable">
+              <thead>
+                <tr>
+                  <th>Skill Area</th>
+                  <th>Category</th>
+                  <th>Level</th>
+                  <th>What to Understand (Deep)</th>
+                  <th>Suggested Hands-on Practice</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>HTML - Basics</td><td>HTML</td><td><span class="level beginner">Beginner</span></td><td>Elements, tags, attributes, document structure (doctype, head, body).</td><td>Create simple pages, forms, lists, links.</td></tr>
+                <tr><td>Semantic HTML</td><td>HTML</td><td><span class="level intermediate">Intermediate</span></td><td>Use semantic tags (header, nav, main, article, section, footer) for meaning &amp; SEO.</td><td>Refactor a page to replace divs with semantic tags; improve SEO.</td></tr>
+                <tr><td>Forms &amp; Validation</td><td>HTML</td><td><span class="level intermediate">Intermediate</span></td><td>Form controls, input types, validation attributes, accessibility concerns.</td><td>Build multi-field forms with validation and accessible labels.</td></tr>
+                <tr><td>HTML APIs</td><td>HTML</td><td><span class="level advanced">Advanced</span></td><td>Understanding of DOM, history API, templates, data-* attributes.</td><td>Use templates and manipulate DOM with vanilla JS for progressive enhancement.</td></tr>
+                <tr><td>Accessibility (a11y) - HTML</td><td>HTML</td><td><span class="level advanced">Advanced</span></td><td>ARIA roles, semantic landmarks, focus management and keyboard interaction.</td><td>Audit pages with screen-reader testing and fix issues.</td></tr>
+                <tr><td>CSS - Basics</td><td>CSS</td><td><span class="level beginner">Beginner</span></td><td>Selectors, box model, margin/padding, fonts, colors, specificity basics.</td><td>Style a static page with typography and spacing.</td></tr>
+                <tr><td>Layout - Normal Flow &amp; Positioning</td><td>CSS</td><td><span class="level intermediate">Intermediate</span></td><td>Display types, position (static/relative/absolute/fixed/sticky), floats, z-index.</td><td>Convert a mockup to use positioning and stacking context.</td></tr>
+                <tr><td>Flexbox</td><td>CSS</td><td><span class="level intermediate">Intermediate</span></td><td>One-dimensional layout for rows/columns, alignment, order, flex properties.</td><td>Build navbars, card rows, vertical centering with flexbox.</td></tr>
+                <tr><td>Grid</td><td>CSS</td><td><span class="level advanced">Advanced</span></td><td>Two-dimensional layout: grid-template, areas, fractions, auto-placement.</td><td>Create complex responsive page layouts with CSS Grid.</td></tr>
+                <tr><td>Responsive Design</td><td>CSS</td><td><span class="level advanced">Advanced</span></td><td>Media queries, fluid typography, container queries (where supported), mobile-first.</td><td>Make a multi-breakpoint responsive site from a design.</td></tr>
+                <tr><td>Modern CSS (Custom Properties)</td><td>CSS</td><td><span class="level advanced">Advanced</span></td><td>CSS variables, calc(), clamp(), modern functions for dynamic sizing.</td><td>Implement theme variables and responsive sizing with clamp.</td></tr>
+                <tr><td>Preprocessors &amp; Tooling</td><td>CSS</td><td><span class="level intermediate">Intermediate</span></td><td>SASS/SCSS, nesting, variables, mixins, build pipeline basics (PostCSS).</td><td>Refactor repetitive CSS into SCSS with variables/mixins.</td></tr>
+                <tr><td>Design Systems &amp; Architecture</td><td>CSS</td><td><span class="level advanced">Advanced</span></td><td>BEM, SMACSS, utility-first, componentization, tokens and theming.</td><td>Create a mini design system and component stylesheet.</td></tr>
+                <tr><td>Performance &amp; Critical CSS</td><td>CSS</td><td><span class="level advanced">Advanced</span></td><td>Minification, critical-path CSS, render-blocking minimization, file splitting.</td><td>Analyze and optimize CSS delivery for faster first paint.</td></tr>
+                <tr><td>Accessibility (a11y) - CSS</td><td>CSS</td><td><span class="level advanced">Advanced</span></td><td>Visible focus states, reduced-motion support, color contrast considerations.</td><td>Ensure focus visibility and add prefers-reduced-motion support.</td></tr>
+                <tr><td>Testing &amp; Debugging</td><td>Tools</td><td><span class="level intermediate">Intermediate</span></td><td>DevTools, Lighthouse, browser compatibility testing, cross-device checks.</td><td>Use DevTools to debug layout, measure performance, and fix issues.</td></tr>
+                <tr><td>Progressive Enhancement &amp; Graceful Degradation</td><td>Principles</td><td><span class="level advanced">Advanced</span></td><td>Build for baseline functionality then enhance; avoid breaking for older browsers.</td><td>Provide accessible fallbacks for modern features.</td></tr>
+                <tr><td>Integration with JS &amp; Frameworks</td><td>Principles</td><td><span class="level intermediate">Intermediate</span></td><td>How CSS &amp; HTML interact with frameworks and JS (scoped CSS, CSS-in-JS considerations).</td><td>Style components in a small framework app and manage styles lifecycle.</td></tr>
+                <tr><td>Soft Skills &amp; Workflow</td><td>Non-technical</td><td><span class="level beginner">Beginner</span></td><td>Collaboration, Git-based workflow, code review, semantic commits.</td><td>Contribute to a small frontend repo and follow PR process.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="chart-card card">
+          <h3 style="margin-top:0">Importance Chart</h3>
+          <p class="lead" style="margin-bottom:8px">Relative emphasis (1-10) across major skill categories</p>
+          <canvas id="importanceChart" width="400" height="300"></canvas>
+          <div style="margin-top:10px">
+            <button id="downloadChart" class="btn">Download Chart PNG</button>
+            <a id="downloadHTML" class="btn" href="#" download="HTML_CSS_Skills_Deep_Chart.html">Download HTML</a>
+          </div>
+        </div>
+
+      </div>
+
+      <footer>
+        Tip: Use the <strong>Download Chart PNG</strong> button to save the visual. To save the whole page, press <kbd>Ctrl/Cmd+S</kbd> in your browser.
+      </footer>
+    </div>
+  </div>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const categories = [
+      "HTML Fundamentals",
+      "Semantic HTML & A11y",
+      "CSS Fundamentals (Box model, selectors)",
+      "Layout (Flexbox & Grid)",
+      "Responsive Design & Modern CSS",
+      "Design Systems & Architecture",
+      "Tooling, Performance & Testing",
+      "Integration & Frameworks",
+      "Forms & Validation",
+      "Soft Skills & Workflow"
+    ];
+    const importance = [9,8,9,8,8,7,7,6,7,6];
+
+    const ctx = document.getElementById('importanceChart').getContext('2d');
+    const importanceChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: categories,
+        datasets: [{
+          label: 'Relative Emphasis (1-10)',
+          data: importance,
+          borderRadius: 6,
+          barThickness: 18,
+          maxBarThickness: 28,
+          backgroundColor: function(context){
+            // subtle gradient based on value
+            const v = context.dataset.data[context.dataIndex];
+            if(v>=9) return 'rgba(22,163,74,0.95)';
+            if(v>=8) return 'rgba(14,165,132,0.9)';
+            if(v>=7) return 'rgba(59,130,246,0.9)';
+            return 'rgba(99,102,241,0.85)';
+          }
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: {beginAtZero:true, max:10, ticks:{stepSize:1}},
+          y: {ticks:{autoSkip:false}}
+        },
+        plugins: {legend:{display:false}, tooltip:{callbacks:{label: function(ctx){return 'Emphasis: '+ctx.parsed.x}}}}
+      }
+    });
+
+    // Download chart as PNG
+    document.getElementById('downloadChart').addEventListener('click', ()=>{
+      const a = document.createElement('a');
+      a.href = document.getElementById('importanceChart').toDataURL('image/png');
+      a.download = 'HTML_CSS_Importance_Chart.png';
+      a.click();
+    });
+
+    // Create a link to download the HTML file content
+    document.getElementById('downloadHTML').addEventListener('click', (e)=>{
+      const blob = new Blob([document.documentElement.outerHTML], {type: 'text/html'});
+      const url = URL.createObjectURL(blob);
+      e.target.href = url;
+    });
+  </script>
+</body>
+</html>
